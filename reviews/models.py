@@ -1,4 +1,3 @@
-from logging.config import _LoggerConfiguration
 from operator import mod
 from statistics import mode
 from django.db import models
@@ -19,4 +18,4 @@ class Review(core_models.TimeStampedModel):
     room = models.ForeignKey("rooms.Room", on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.review
+        return f'{self.review}-{self.room}'
